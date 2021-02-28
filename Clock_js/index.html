@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Clock</title>
+</head>
+
+<body>
+    <h1 class="header">MADE BY CUONG NGUYEN KMA</h1>
+    <div class="clock">
+        <div class="hand hours-hand"></div>
+        <div class="hand mins-hand"></div>
+        <div class="hand seconds-hand"></div>
+    </div>
+    <div class="digital-clock">
+        <div class="box">
+            <p class="hours"></p>
+            <p class="label">Hour</p>
+        </div>
+        <div class="box">
+            <p class="mins"></p>
+            <p class="label">Min</p>
+        </div>
+        <div class="box">
+            <p class="secs"></p>
+            <p class="label">Sec</p>
+        </div>
+    </div>
+</body>
+<script>
+    const setDate = () => {
+        const secondsHand = document.querySelector(".seconds-hand");
+        const minutesHand = document.querySelector(".mins-hand");
+        const hoursHand = document.querySelector(".hours-hand");
+        const time = new Date();
+        const seconds = time.getSeconds();
+        const minutes = time.getMinutes();
+        const hours = time.getHours();
+        console.log(seconds, minutes, hours);
+        const secondsDeg = (seconds / 60) * 360 + 90;
+        const minutesDeg = (minutes / 60) * 360 + 90;
+        const hoursDeg = (hours / 12) * 360 + 90;
+        secondsHand.style.transform = `rotate(${secondsDeg}deg)`;
+        minutesHand.style.transform = `rotate(${minutesDeg}deg)`;
+        hoursHand.style.transform = `rotate(${hoursDeg}deg)`;
+    };
+    setInterval(setDate, 1000);
+    const digitalClock = () => {
+        const hours = document.querySelector(".hours");
+        console.log(hours);
+        const mins = document.querySelector(".mins");
+        const secs = document.querySelector(".secs");
+        const time = new Date();
+        const seconds = time.getSeconds();
+        const minutes = time.getMinutes();
+        const hour = time.getHours();
+        secs.innerHTML = `${seconds}`;
+        mins.innerHTML = `${minutes}`;
+        hours.innerHTML = `${hour}`;
+    };
+    setInterval(digitalClock, 1000);
+    // digitalClock();
+</script>
+
+</html>
