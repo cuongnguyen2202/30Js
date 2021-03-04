@@ -15,6 +15,4 @@ function handleCheckbox(e) {
     }
 }
 
-checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("click", handleCheckbox);
-});
+checkboxes[0].addEventListener("click", handleCheckbox);
