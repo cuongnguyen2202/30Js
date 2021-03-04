@@ -1,0 +1,57 @@
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+input {
+    width: 100%;
+    padding: 2rem;
+}
+
+.search-form {
+    max-width: 40rem;
+    margin: 5rem auto;
+}
+
+input.search-input {
+    margin: 0;
+    text-align: center;
+    outline: 0;
+    border: 1px solid #f7f7f7;
+    position: relative;
+    top: 1rem;
+    z-index: 2;
+    left: -5%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+
+.suggestion {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.suggestion li {
+    background-color: white;
+    border-bottom: 1px solid #d8d8d8;
+    display: flex;
+    margin: 0;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+    transition: background 0.2s linear;
+}
+
+.suggestion li:nth-child(even) {
+    transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+    background: linear-gradient(to bottom, #ffffff 0%, #EFEFEF 100%);
+}
+
+.suggestion li:nth-child(odd) {
+    transform: perspective(100px) rotateX(-3deg) translateY(3px);
+    background: linear-gradient(to top, #ffffff 0%, #EFEFEF 100%);
+}

@@ -10,17 +10,11 @@ function activeProp(e) {
     }
 }
 
-function notFocus(e) {
-    if (!this.contains(e.target) && !e.target.matches(".panel")) {
-        this.classList.remove("open");
-    }
-}
 panels.forEach((panel) => {
     panel.addEventListener("click", toggle);
 });
 panels.forEach((panel) => {
     panel.addEventListener("transitionend", activeProp);
 });
-panels.forEach((panel) => {
-    panel.addEventListener("click", notFocus);
-});
+
+document.addEventListener("click", removeEvent);
